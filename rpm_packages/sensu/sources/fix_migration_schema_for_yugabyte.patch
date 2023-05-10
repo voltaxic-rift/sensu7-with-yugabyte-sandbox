@@ -1,0 +1,22 @@
+diff --git a/backend/store/postgres/migrations_schema.go b/backend/store/postgres/migrations_schema.go
+index 00961b8c6..0b3aba093 100644
+--- a/backend/store/postgres/migrations_schema.go
++++ b/backend/store/postgres/migrations_schema.go
+@@ -181,7 +181,7 @@ CREATE TABLE IF NOT EXISTS entities_networks (
+ 	name      text NOT NULL,
+ 	mac       text NOT NULL,
+ 	addresses jsonb,
+-	UNIQUE(entity_id, name, mac, addresses)
++	UNIQUE(entity_id, name, mac)
+ );
+ 
+ -- Index the entity_id colum on entities_networks
+@@ -198,7 +198,7 @@ const migrateDropEntitiesNetworkUnique = `
+ -- The application will now be responsible for ensuring entities_networks table
+ -- hygiene.
+ --
+-ALTER TABLE entities_networks DROP CONSTRAINT entities_networks_entity_id_name_mac_addresses_key;
++ALTER TABLE entities_networks DROP CONSTRAINT entities_networks_entity_id_name_mac_key;
+ `
+ 
+ // Migration 9

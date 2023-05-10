@@ -1,0 +1,15 @@
+[Unit]
+Description=Daemon to start a single-node YugabyteDB process
+Documentation=https://docs.yugabyte.com
+
+[Service]
+Type=simple
+User=yugabyte
+Group=yugabyte
+LimitNOFILE=65535
+ExecStart=/opt/yugabytedb/bin/yb-tserver --flagfile /etc/yugabytedb/yb-tserver.conf
+PIDFile=/var/lib/yugabytedb/yb-tserver.pid
+TimeoutStartSec=5min
+
+[Install]
+WantedBy=multi-user.target
