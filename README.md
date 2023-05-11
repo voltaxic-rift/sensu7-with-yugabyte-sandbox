@@ -1,5 +1,15 @@
 # Sensu7 with Yugabyte Sandbox
 
+## Architecture
+
+- Physical  
+  
+![sensu7_phys_arch](https://github.com/voltaxic-rift/sensu7-with-yugabyte-sandbox/assets/19828725/cbfac632-6a84-4737-be39-792c69a2f340)  
+  
+- Logical  
+  
+![sensu7_logi_arch](https://github.com/voltaxic-rift/sensu7-with-yugabyte-sandbox/assets/19828725/9e6eddd7-9680-40a3-8e53-555a5621b6bc)  
+
 ## Getting started
 
 ```
